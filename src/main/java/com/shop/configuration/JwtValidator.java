@@ -26,6 +26,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -49,6 +50,7 @@ public class JwtValidator extends OncePerRequestFilter {
 
         String jwt = request.getHeader(JwtConstant.JWT_HEADER);
         String path = request.getServletPath();
+        System.out.println("processing path: " + path);
 
         // Fix: Use startsWith to handle trailing slashes or proxy paths reliably on Railway
         if (path.startsWith("/auth/login") || path.startsWith("/auth/signup")) {
