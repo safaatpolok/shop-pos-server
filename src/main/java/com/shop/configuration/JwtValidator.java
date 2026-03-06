@@ -60,7 +60,7 @@ public class JwtValidator extends OncePerRequestFilter {
         if (jwt != null && jwt.startsWith("Bearer ")) {
             try {
                 // Logic remains the same: substring(7) to remove "Bearer "
-                String token = jwt.substring(7);
+                String token = jwt.substring(7).trim();
 
                 SecretKey key = Keys.hmacShaKeyFor(JwtConstant.JWT_SECRET.getBytes());
 
