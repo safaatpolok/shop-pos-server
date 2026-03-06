@@ -30,7 +30,7 @@ public class SecurityConfig {
                         Authorize
                                 .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/auth/**").permitAll()
-                                .requestMatchers("/api/super-admin/**").hasRole("ADMIN")
+                                .requestMatchers("/api/super-admin/**").hasRole("ROLE_ADMIN")
                                 .requestMatchers("/api/**").authenticated()
 
                                 .anyRequest().permitAll()
