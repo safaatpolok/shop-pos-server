@@ -31,8 +31,7 @@ public class SecurityConfig {
                                 .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/api/**").authenticated()
-                                .requestMatchers("/api/super-admin/**")
-                                .hasRole("ADMIN")
+                                .requestMatchers("/api/super-admin/**").hasRole("ADMIN")
                                 .anyRequest().permitAll()
                 ).addFilterBefore(new JwtValidator(),
                         BasicAuthenticationFilter.class)
