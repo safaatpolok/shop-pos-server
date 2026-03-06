@@ -22,7 +22,9 @@ public class UserController {
     public ResponseEntity<UserDto> getUserProfile(
             @RequestHeader("Authorization") String jwt
     )                throws UserException {
+        String token = jwt.replace("Bearer ", "");
         User user = userService.getUserFromJwtToken(jwt);
+        UserDto userDto = UserMapper.toDTO(user);
         return ResponseEntity.ok(UserMapper.toDTO(user));
 
     }
