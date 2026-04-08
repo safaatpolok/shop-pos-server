@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "https://shop-pos-client.vercel.app")
 @RestController
 
 @RequiredArgsConstructor
