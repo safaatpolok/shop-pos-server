@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(Authorize ->
                         Authorize
 //                                .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
-//                                .requestMatchers("/auth/**").permitAll()
+                              .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/api/**").authenticated()
                                 .requestMatchers("/api/super-admin/**").hasRole("ADMIN")
 
