@@ -60,7 +60,8 @@ private CorsConfigurationSource corsConfigurationSource(){
                     Arrays.asList(
                             "http://localhost:5173",
                             "http://localhost:3000",
-                            "https://shop-pos-client.vercel.app"
+                            "https://shop-pos-client.vercel.app",
+                            "https://shop-pos-nine.vercel.app"
 
 //                            "http://localhost:5000"
 
